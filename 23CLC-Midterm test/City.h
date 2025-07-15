@@ -1,13 +1,18 @@
+// City.h
 #pragma once
-#ifndef CITY_H
-#define CITY_H
-
 #include <vector>
-using namespace std;
-
+#include "Building.h"
 
 class City {
-	vector<vector<int>> banDo;
-};
+private:
+    int hang, cot;
+    std::vector<std::vector<Building*>> banDo;
 
-#endif CITY_H // CITY_H
+public:
+    City(int h = 5, int c = 5);
+    ~City();
+
+    bool coTheXay(int x, int y) const;
+    void datCongTrinh(int x, int y, Building* b);
+    void hienThiBanDo() const;
+};
